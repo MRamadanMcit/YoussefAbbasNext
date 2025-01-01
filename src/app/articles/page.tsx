@@ -1,5 +1,19 @@
-export default function ArticlesPage() {
+import ArticleItem from "@/components/articles/articleItem";
+import { Article } from "@/utils/types";
+
+const ArticlesPage = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const articles: Article[] = await res.json();
+
   return (
-    <div>Articles Page</div>
-  )
-}
+    <section className="m-auto px-5">
+      <div className="flex items-center justify-center flex-wrap gap-7">
+        {articles.map((article) => (
+          <ArticleItem article={article} key={article?.id} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default ArticlesPage;
