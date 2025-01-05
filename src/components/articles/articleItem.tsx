@@ -16,7 +16,7 @@ export default function ArticleItem({ article }: ArticleProps) {
         {article?.body}
       </p>
       <Link
-        href={`/article/${article.id}`}
+        href={`/articles/${article?.id}`}
         className="w-full p-1 bg-purple-700 text-xl block text-white rounded-lg text-center hover:bg-purple-700"
       >
         Read More

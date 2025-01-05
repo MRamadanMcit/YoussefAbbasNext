@@ -1,7 +1,7 @@
 import ArticleItem from "@/components/articles/articleItem";
 import { Article } from "@/utils/types";
 
-const ArticlesPage = async () => {
+export default async function ArticlesPage() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   if (!res.ok) throw new Error("Failed to fetch articles");
   const articles: Article[] = await res.json();
@@ -15,6 +15,4 @@ const ArticlesPage = async () => {
       </div>
     </section>
   );
-};
-
-export default ArticlesPage;
+}
