@@ -21,3 +21,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.fix-height {
+  height: calc(100vh - 150px);
+}
