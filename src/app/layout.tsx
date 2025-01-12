@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        <ToastContainer />
         <main style={{ minHeight: "calc(100vh - 150px)" }}>{children}</main>
         <Footer />
       </body>
