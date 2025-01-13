@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <ToastContainer />
+        <ToastContainer theme="colored" position="top-center" />
         <main style={{ minHeight: "calc(100vh - 150px)" }}>{children}</main>
         <Footer />
       </body>

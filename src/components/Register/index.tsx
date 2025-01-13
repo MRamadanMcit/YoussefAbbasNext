@@ -1,23 +1,32 @@
 "use client";
 
 import React, { useState } from "react";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-export default function Login() {
+export default function RegisterForm() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const formSubmitHandle = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if(email === "") return toast.error("Email is Required");
-    if(password === "") return toast.error("Password is Required");
+    if (username === "") return toast.error("Username is Required");
+    if (email === "") return toast.error("Email is Required");
+    if (password === "") return toast.error("Password is Required");
 
-    console.log({ email, password });
+    console.log({ username, email, password });
   };
 
   return (
     <form className="flex flex-col" onSubmit={formSubmitHandle}>
+      <input
+        className="mb-4 p-2 text-xl border rounded"
+        type="text"
+        placeholder="Enter Your username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
       <input
         className="mb-4 p-2 text-xl border rounded"
         type="email"
@@ -36,7 +45,7 @@ export default function Login() {
         type="submit"
         className="p-2 bg-blue-800 text-white font-bold rounded-lg"
       >
-        Login
+        Register
       </button>
     </form>
   );
