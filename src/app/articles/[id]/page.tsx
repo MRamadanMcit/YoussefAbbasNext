@@ -1,7 +1,7 @@
 import { Article } from "@/utils/types";
 
 interface ArticleProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ArticlePage({ params }: ArticleProps) {
