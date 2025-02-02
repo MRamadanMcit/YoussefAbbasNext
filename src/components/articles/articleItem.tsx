@@ -8,7 +8,6 @@ interface ArticleProps {
 export default function ArticleItem({ article }: ArticleProps) {
   return (
     <div
-      key={article.id}
       className="w-full my-1 p-5 border-2 border-gray-400 rounded-lg shadow-lg hover:bg-slate-200 md:w-2/5 lg:w-1/4"
     >
       <h3 className="text-xl font-bold text-gray-900 line-clamp-1">{article?.title}</h3>
