@@ -2,10 +2,12 @@
 
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const formSubmitHandle = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,6 +16,7 @@ export default function Login() {
     if(password === "") return toast.error("Password is Required");
 
     console.log({ email, password });
+    router.replace('/');
   };
 
   return (
