@@ -1,4 +1,6 @@
 import { Article } from "@/utils/types";
+import CommentItem from "@/components/articles/comments/commentItem";
+import AddCommentForm from "@/components/articles/comments/addCommentForm";
 
 interface ArticleProps {
   params: Promise<{ id: string }>;
@@ -20,6 +22,13 @@ export default async function ArticlePage({ params }: ArticleProps) {
         <div className="text-gray-400">1/1/2025</div>
         <p className="mt-5 text-gray-800 text-xl">{article?.body}</p>
       </div>
+      <AddCommentForm />
+      <h4 className="mb-2 mt-7 ps-1 text-gray-800 text-xl font-semibold">
+        Comments
+      </h4>
+      <CommentItem />
+      <CommentItem />
+      <CommentItem />
     </section>
   );
 }
