@@ -6,6 +6,8 @@ import ArticleItem from "@/components/articles/articleItem";
 import SearchArticleInput from "@/components/articles/searchArticleInput";
 
 export default async function ArticlesPage() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     next: { revalidate: 100 },
   });
