@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 export default function SearchArticleInput() {
@@ -9,7 +10,7 @@ export default function SearchArticleInput() {
 
   const formSubmitHandle = (e: React.FormEvent) => {
     e.preventDefault();
-
+    if (searchText === "") return toast.error("Search should exists value");
     console.log({ searchText });
     router.push(`/articles/search?searchText=${searchText}`);
   };
